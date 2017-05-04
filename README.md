@@ -18,6 +18,6 @@ Quick demo to demonstrate the use of firebase web push notifications with the us
   - send yourself a test notification with django admin actions
   - voila :)
 
-## fcm-django API URL docs
+### fcm-django API URL docs
 
   - available via `coreapi` and `djangorestframework` pypi packages, can be accessed at http://localhost:8000/docs
