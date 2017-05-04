@@ -5,8 +5,15 @@ Quick demo to demonstrate the use of firebase web push notifications with the us
 ## Quick start
 
 ### frontend
-  - run with `python -m SimpleHTTPServer 8001` and use firefox (Couldn't get it to work in chrome and did not figure out why).
+  - run with `python -m SimpleHTTPServer 8001` in `fcm-django-web-demo/frontend`
 
 ### backend
-  - `python manage.py migrate && python manage.py collectstatic`
+  - run with `python manage.py migrate && python manage.py collectstatic` in `fcm-django-web-demo/mysite`
   - run with `python manage.py runserver 0.0.0.0:8000`.
+
+### how to use
+  - open http://localhost:8001 in your browser of choice and allow firebase to send notifications to it
+  - you should now be seeing your instance id token on the forementioned URL
+  - if you go to django admin, http://localhost:8000/admin/fcm_django, you should be seeing a FCMDevice instance for your browser
+  - send yourself a test notification with django admin actions
+  - voila :)

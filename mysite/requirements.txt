@@ -1,4 +1,4 @@
 Django==1.10.5
-fcm-django==0.2.6
-djangorestframework==3.5.4
+fcm-django==0.2.7
+djangorestframework==3.6.2
 django-cors-headers==2.0.2
