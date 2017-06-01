@@ -199,7 +199,8 @@ limitations under the License.
         body: JSON.stringify({
           'registration_id': currentToken,
           'type': 'web',
-        })
+        }),
+        credentials: "include",
       }).then(function(response) {
         console.log(response);
       })
