@@ -1,2 +1,4 @@
 env/
 mysite/db.sqlite3
+.idea/
+.idea1/
