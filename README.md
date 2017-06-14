@@ -15,6 +15,7 @@ Supports HTTPS (useful if running demo on `localhost` is not an option).
 - in `fcm-django-web-demo`:
   - generate self-signed certificate and key with: `openssl req -nodes -new -x509 -keyout key.pem -out cert.pem`
 - in `fcm-django-web-demo/frontend`:
+  - change protocol to https (index.html, line 194)
   - run server with `python server.py`
 
 ### backend
@@ -22,10 +23,11 @@ Supports HTTPS (useful if running demo on `localhost` is not an option).
   - run database migrations with `python manage.py migrate`
   - create Django administrator with `python manage.py createsuperuser`
   - collect static files with `python manage.py collectstatic`
+  - add host IP address to ALLOWED_HOSTS in settings.py in mysite folder
   - run server with `python manage.py runsslserver --certificate ../cert.pem --key ../key.pem 0.0.0.0:8000`.
 
 ### how to use
-- open https://0.0.0.0:4443 in your browser of choice and allow untrusted connection
+- open https://0.0.0.0:4443 in your browser of choice and allow untrusted connection (run Chrome with --ignore-certificate-errors flag)
 - request token and allow firebase to send notifications to your browser (device)
 - you should now be seeing your instance id token on the aforementioned URL
 - if you go to django admin, https://0.0.0.0:8000/admin/fcm_django/fcmdevice/ (allow untrusted connection again), you should be seeing a FCMDevice instance for your browser
