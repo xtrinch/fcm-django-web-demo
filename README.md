@@ -39,7 +39,7 @@ Quick demo to demonstrate the use of firebase web push notifications with the us
 - *why would you want to do this?* because service workers will not work on http, unless you are running them on localhost
 - generate certificate and key with `openssl req -nodes -new -x509 -keyout key.pem -out cert.pem` in `fcm-django-web-demo`
 - in `fcm-django-web-demo/frontend`:
-  - update URL protocol to `https` and `localhost` to your server's IP address in [index.html](https://github.com/Pymancer/fcm-django-web-demo/blob/3471b0be6a6f01c282d12924323556129b04b379/frontend/index.html#L194)
+  - update URL protocol to `https` and `localhost` to your server's IP address in [index.html](https://github.com/xtrinch/fcm-django-web-demo/blob/b8d552830de2b5d82e2d3f787e98d160160c0844/frontend/index.html#L194)
   - run frontend server with `python server.py` 
 - in `fcm-django-web-demo/mysite`:
   - add your server's IP address to allowed hosts in project settings (shell example: `echo "ALLOWED_HOSTS = ['172.20.1.10']" > mysite/local_settings.py`)
