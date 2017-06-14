@@ -29,8 +29,8 @@ Quick demo to demonstrate the use of firebase web push notifications with the us
   - shell example (run `python manage.py shell` from `fcm-django-web-demo/mysite`):
     ```python
 	   from fcm_django.models import FCMDevice
-	   devices = FCMDevice.objects.all()
-	   devices[0].send_message(title='title', body='message')
+	   device = FCMDevice.objects.all().first()
+	   device.send_message(title='title', body='message')
     ```
 - voila :)
 
