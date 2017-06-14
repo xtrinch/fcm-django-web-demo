@@ -1,4 +1,3 @@
 env/
 mysite/db.sqlite3
 .idea/
-*.pem
