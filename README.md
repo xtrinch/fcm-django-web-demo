@@ -35,7 +35,7 @@ Quick demo to demonstrate the use of firebase web push notifications with the us
     ```
 - voila :)
 
-### HTTPS support
+### optional HTTPS support
 - *why would you want to do this?* because service workers will not work on http, unless you are running them on localhost
 - generate certificate and key with `openssl req -nodes -new -x509 -keyout key.pem -out cert.pem` in `fcm-django-web-demo`
 - in `fcm-django-web-demo/frontend`:
