@@ -41,10 +41,10 @@ Quick demo to demonstrate the use of firebase web push notifications with the us
 ### short notes about how to run this demo with HTTPS support in case `localhost` is not an option
 - generate certificate and key with `openssl req -nodes -new -x509 -keyout key.pem -out cert.pem` in `fcm-django-web-demo`
 - in `fcm-django-web-demo/frontend`:
-  - update URL protocol to `https` and `localhost` to your server's IP address in index.html, line 194
+  - update URL protocol to `https` and `localhost` to your server's IP address in [index.html](https://github.com/Pymancer/fcm-django-web-demo/blob/3471b0be6a6f01c282d12924323556129b04b379/frontend/index.html#L194)
   - run frontend server with `python server.py` 
 - in `fcm-django-web-demo/mysite`:
-  - install ssl development server with `pip install django-sslserver`
+  - add your server's IP address to allowed hosts in project settings (shell example: `echo "ALLOWED_HOSTS = ['172.20.1.10']" > mysite/local_settings.py`)
   - run backend server with `python manage.py runsslserver --certificate ../cert.pem --key ../key.pem 0.0.0.0:8000`
 - testing this demo in Chrome may require to run it with `--ignore-certificate-errors` flag to avoid SSL certificate fetch errors
-
+- during the testing allow untrusted connections to the demo servers on browser prompt
