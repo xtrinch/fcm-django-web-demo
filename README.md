@@ -36,5 +36,15 @@ Quick demo to demonstrate the use of firebase web push notifications with the us
 
 ### fcm-django API URL docs
 
-  - available via `coreapi` and `djangorestframework` pypi packages, can be accessed at http://localhost:8000/docs
+- available via `coreapi` and `djangorestframework` pypi packages, can be accessed at http://localhost:8000/docs
+
+### short notes about how to run this demo with HTTPS support in case `localhost` is not an option
+- generate certificate and key with `openssl req -nodes -new -x509 -keyout key.pem -out cert.pem` in `fcm-django-web-demo`
+- in `fcm-django-web-demo/frontend`:
+  - update URL protocol to `https` and `localhost` to your server's IP address in index.html, line 194
+  - run frontend server with `python server.py` 
+- in `fcm-django-web-demo/mysite`:
+  - install ssl development server with `pip install django-sslserver`
+  - run backend server with `python manage.py runsslserver --certificate ../cert.pem --key ../key.pem 0.0.0.0:8000`
+- testing this demo in Chrome may require to run it with `--ignore-certificate-errors` flag to avoid SSL certificate fetch errors
 
