@@ -4,14 +4,15 @@ Quick demo to demonstrate the use of firebase web push notifications with the us
 
 ## Quick start
 
-### general
+### prerequisites
 - in `fcm-django-web-demo`:
   - create virtual environment with `python -m virtualenv env` (or `python -m venv env` in Python 3)
   - activate virtual environment with `. env/bin/activate`
   - install necessary Python packages with `pip install -r mysite/requirements.txt`
 
-### frontend (in `fcm-django-web-demo/frontend`)
-- run server with `python -m SimpleHTTPServer 8001`
+### frontend
+- in `fcm-django-web-demo/frontend`:
+  - run server with `python -m SimpleHTTPServer 8001`
 
 ### backend
 - in `fcm-django-web-demo/mysite`:
@@ -34,11 +35,8 @@ Quick demo to demonstrate the use of firebase web push notifications with the us
     ```
 - voila :)
 
-### fcm-django API URL docs
-
-- available via `coreapi` and `djangorestframework` pypi packages, can be accessed at http://localhost:8000/docs
-
-### short notes about how to run this demo with HTTPS support in case `localhost` is not an option
+### HTTPS support
+- *why would you want to do this?* because service workers will not work on http, unless you are running them on localhost
 - generate certificate and key with `openssl req -nodes -new -x509 -keyout key.pem -out cert.pem` in `fcm-django-web-demo`
 - in `fcm-django-web-demo/frontend`:
   - update URL protocol to `https` and `localhost` to your server's IP address in [index.html](https://github.com/Pymancer/fcm-django-web-demo/blob/3471b0be6a6f01c282d12924323556129b04b379/frontend/index.html#L194)
@@ -48,3 +46,7 @@ Quick demo to demonstrate the use of firebase web push notifications with the us
   - run backend server with `python manage.py runsslserver --certificate ../cert.pem --key ../key.pem 0.0.0.0:8000`
 - testing this demo in Chrome may require to run it with `--ignore-certificate-errors` flag to avoid SSL certificate fetch errors
 - during the testing allow untrusted connections to the demo servers on browser prompt
+
+### fcm-django DRF API URL docs demo
+
+- available via `coreapi` and `djangorestframework` pypi packages, can be accessed at http://localhost:8000/docs
