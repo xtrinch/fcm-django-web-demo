@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'fcm_django',
     'corsheaders',
+    'sslserver',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,16 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ),
 }
+
+# plug in local settings if any
+PROJECT_APP = os.path.basename(BASE_DIR)
+f = os.path.join(PROJECT_APP, 'local_settings.py')
+if os.path.exists(f):
+    import sys
+    import imp
+    module_name = '%s.local_settings' % PROJECT_APP
+    module = imp.new_module(module_name)
+    module.__file__ = f
+    sys.modules[module_name] = module
+    exec(open(f, 'rb').read())
+
