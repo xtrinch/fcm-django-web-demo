@@ -7,7 +7,7 @@ Quick demo to demonstrate the use of firebase web push notifications with the us
 ### prerequisites
 - in `fcm-django-web-demo`:
   - create virtual environment with `python -m virtualenv env` (or `python -m venv env` in Python 3)
-  - activate virtual environment with `. env/bin/activate`
+  - activate virtual environment with `. env/bin/activate` or `.\env\Scripts\activate.ps1` for Windows' Powershell
   - install necessary Python packages with `pip install -r mysite/requirements.txt`
 
 ### frontend
