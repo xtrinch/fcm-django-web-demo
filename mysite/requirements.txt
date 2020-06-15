@@ -4,3 +4,4 @@ django-cors-headers==3.3.0
 djangorestframework==3.9.1
 django-sslserver==0.19
 Django==3.0.7
+six==1.15.0

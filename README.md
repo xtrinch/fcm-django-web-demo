@@ -13,7 +13,7 @@ Python3 compatible only!
 
 ### frontend
 - in `fcm-django-web-demo/frontend`:
-  - run server with `python -m SimpleHTTPServer 8001`
+  - run server with `python -m http.server 8001`
 
 ### backend
 - in `fcm-django-web-demo/mysite`:
@@ -24,11 +24,12 @@ Python3 compatible only!
 
 ### how to use
 - open http://localhost:8001 in your browser of choice
-- request token and allow firebase to send notifications to your browser (device)
+- request token and allow firebase to send notifications to your browser (device) - if notifications are already allowed, there will only be a token displayed
 - you should now be seeing your instance id token on the aforementioned URL
-- if you go to django admin, http://localhost:8000/admin/fcm_django/fcmdevice/, you should be seeing a FCMDevice instance for your browser
-- send yourself a test notification with django admin actions
-  - shell example (run `python manage.py shell` from `fcm-django-web-demo/mysite`):
+- if you go to django admin, http://localhost:8000/admin/fcm_django/fcmdevice/ and login with the superuser you created earlier, you should be seeing a FCMDevice instance for your browser
+- send yourself a test notification with django admin actions OR
+- send yourself notifications from the shell
+    - example (run `python manage.py shell` from `fcm-django-web-demo/mysite`):
     ```python
 	   from fcm_django.models import FCMDevice
 	   device = FCMDevice.objects.all().first()
