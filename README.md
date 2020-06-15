@@ -1,12 +1,13 @@
 # fcm-django-web-demo
 
 Quick demo to demonstrate the use of firebase web push notifications with the use of `javascript` on frontend, `django` on backend and push notifications via `fcm-django` pypi package for django.
+Python3 compatible only!
 
 ## Quick start
 
 ### prerequisites
 - in `fcm-django-web-demo`:
-  - create virtual environment with `python -m virtualenv env` (or `python -m venv env` in Python 3)
+  - create virtual environment with `python -m venv env`
   - activate virtual environment with `. env/bin/activate` or `.\env\Scripts\activate.ps1` for Windows' Powershell
   - install necessary Python packages with `pip install -r mysite/requirements.txt`
 
