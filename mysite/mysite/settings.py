@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import firebase_admin
+from firebase_admin import credentials
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -140,6 +142,8 @@ REST_FRAMEWORK = {
     ),
 }
 
+GOOGLE_APPLICATION_CREDENTIALS='a9wdde9oig*h(=+!av^yhg5ahasn2_)u8kg@_alp=t4^3adxfi'
+
 # plug in local settings if any
 PROJECT_APP = os.path.basename(BASE_DIR)
 f = os.path.join(PROJECT_APP, 'local_settings.py')
@@ -152,3 +156,5 @@ if os.path.exists(f):
     sys.modules[module_name] = module
     exec(open(f, 'rb').read())
 
+cred = credentials.Certificate(os.path.join(PROJECT_APP, '../credentials.json'))
+firebase_admin.initialize_app(cred)
