@@ -142,8 +142,6 @@ REST_FRAMEWORK = {
     ),
 }
 
-GOOGLE_APPLICATION_CREDENTIALS='a9wdde9oig*h(=+!av^yhg5ahasn2_)u8kg@_alp=t4^3adxfi'
-
 # plug in local settings if any
 PROJECT_APP = os.path.basename(BASE_DIR)
 f = os.path.join(PROJECT_APP, 'local_settings.py')
