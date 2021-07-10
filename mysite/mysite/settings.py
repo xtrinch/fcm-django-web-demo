@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import firebase_admin
+from firebase_admin import credentials
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -152,3 +154,5 @@ if os.path.exists(f):
     sys.modules[module_name] = module
     exec(open(f, 'rb').read())
 
+cred = credentials.Certificate(os.path.join(PROJECT_APP, '../credentials.json'))
+firebase_admin.initialize_app(cred)

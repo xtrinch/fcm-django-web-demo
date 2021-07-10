@@ -32,9 +32,10 @@ Python3 compatible only!
 - send yourself notifications from the shell
     - example (run `python manage.py shell` from `fcm-django-web-demo/mysite`):
     ```python
+	   from firebase_admin.messaging import Message, Notification
 	   from fcm_django.models import FCMDevice
 	   device = FCMDevice.objects.all().first()
-	   device.send_message(title='title', body='message')
+	   device.send_message(notification=Notification(title='title', body='message'))
     ```
 - voila :)
 
