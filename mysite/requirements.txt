@@ -3,5 +3,5 @@ coreapi==2.3.1
 django-cors-headers==3.6.0
 djangorestframework==3.12.2
 django-sslserver==0.22
-Django==3.1.12
+Django==3.1.13
 six==1.15.0
