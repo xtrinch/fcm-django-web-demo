@@ -35,7 +35,7 @@ Python3 compatible only!
 	   from firebase_admin.messaging import Message, Notification
 	   from fcm_django.models import FCMDevice
 	   device = FCMDevice.objects.all().first()
-	   device.send_message(notification=Notification(title='title', body='message'))
+	   device.send_message(Message(notification=Notification(title='title', body='message')))
     ```
 - voila :)
 
