@@ -8,7 +8,7 @@ Python3 compatible only!
 ### prerequisites
 - install python 3, pip
 - in `fcm-django-web-demo`:
-  - create virtual environment with `python -m venv env`
+  - create virtual environment with `python3 -m venv env`
   - activate virtual environment with `source env/bin/activate` or `.\env\Scripts\activate.ps1` for Windows' Powershell
   - install necessary Python packages with `pip install -r mysite/requirements.txt`
 

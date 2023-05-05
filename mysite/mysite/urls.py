@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.urls import re_path, include
 from django.contrib import admin
 from fcm_django.api.rest_framework import FCMDeviceViewSet, FCMDeviceAuthorizedViewSet
 from rest_framework.routers import DefaultRouter
@@ -23,7 +23,7 @@ router = DefaultRouter()
 router.register(r'devices', FCMDeviceViewSet)
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^docs/', include_docs_urls(title='FCM django web demo')),
-    url(r'^', include(router.urls)),
+    re_path(r'^admin/', admin.site.urls),
+    re_path(r'^docs/', include_docs_urls(title='FCM django web demo')),
+    re_path(r'^', include(router.urls)),
 ]
