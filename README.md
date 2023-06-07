@@ -23,7 +23,7 @@ Python3 compatible only!
   - collect static files with `python manage.py collectstatic`
   - run server with `python manage.py runserver 0.0.0.0:8000`.
 
-### how to use
+### how to use swapped version
 - open http://localhost:8001 in your browser of choice
 - request token and allow firebase to send notifications to your browser (device) - if notifications are already allowed, there will only be a token displayed
 - you should now be seeing your instance id token on the aforementioned URL
@@ -32,10 +32,10 @@ Python3 compatible only!
 - send yourself notifications from the shell
     - example (run `python manage.py shell` from `fcm-django-web-demo/mysite`):
     ```python
-	   from firebase_admin.messaging import Message, Notification
-	   from fcm_django.models import FCMDevice
-	   device = FCMDevice.objects.all().first()
-	   device.send_message(Message(notification=Notification(title='title', body='message')))
+    from firebase_admin.messaging import Message, Notification
+    from your_app.models import CustomDevice
+    device = CustomDevice.objects.all().first()
+    device.send_message(Message(notification=Notification(title='title', body='message')))
     ```
 - voila :)
 

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'fcm_django',
     'corsheaders',
     'sslserver',
+    'your_app',
 ]
 
 MIDDLEWARE = [
@@ -132,6 +133,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 FCM_DJANGO_SETTINGS = {
         "FCM_SERVER_KEY": "AAAAUBWqdfo:APA91bEm3ib6_TlLIJ5YpAU6BjyQ7X9GoXeghkgqiBwNPPkr_FP9NjdhVk8EZqCUvgWUIf2vhk5eUnSkJELy7JtJfv1qOGM_UZtxu0FI3BkpUQMxdX-aO3xdvfTKteAkbAc2vXy1xCXu"
 }
+FCM_DJANGO_FCMDEVICE_MODEL = "your_app.CustomDevice"
 
 CORS_ORIGIN_ALLOW_ALL = True
 
