@@ -13,11 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.urls import re_path, include
+from django.urls import re_path, path, include
 from django.contrib import admin
 from fcm_django.api.rest_framework import FCMDeviceViewSet, FCMDeviceAuthorizedViewSet
 from rest_framework.routers import DefaultRouter
 from rest_framework.documentation import include_docs_urls
+from rest_framework.schemas import get_schema_view
 
 router = DefaultRouter()
 router.register(r'devices', FCMDeviceViewSet)
@@ -25,5 +26,10 @@ router.register(r'devices', FCMDeviceViewSet)
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
     re_path(r'^docs/', include_docs_urls(title='FCM django web demo')),
+    path(
+        "openapi",
+        get_schema_view(title="FCM Django", description="FCM Django"),
+        name="openapi-schema",
+    ),
     re_path(r'^', include(router.urls)),
 ]

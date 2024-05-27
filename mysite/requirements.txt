@@ -1,8 +1,9 @@
 fcm-django==1.0.13
 coreapi==2.3.1
 django-cors-headers==3.6.0
-djangorestframework==3.14.0
+djangorestframework==3.15.1
 django-sslserver==0.22
 Django==4.2.11
 six==1.15.0
 urllib3===1.26.18 
+pyyaml===6.0.1
