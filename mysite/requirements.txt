@@ -3,7 +3,7 @@ coreapi==2.3.1
 django-cors-headers==3.6.0
 djangorestframework==3.15.1
 django-sslserver==0.22
-Django==4.2.11
+Django==4.2.15
 six==1.15.0
 urllib3===1.26.18 
 pyyaml===6.0.1
